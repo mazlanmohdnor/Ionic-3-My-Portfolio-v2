@@ -27,6 +27,7 @@ import { WorkPage } from './../pages/work/work';
 //providers
 import { YoutubeProvider } from '../providers/youtube/youtube';
 import { IgProvider } from '../providers/ig/ig';
+import { DataProvider } from '../providers/data/data';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { IgProvider } from '../providers/ig/ig';
     YoutubeProvider,
     YoutubeVideoPlayer,
     IgProvider,
-    InAppBrowser
+    InAppBrowser,
+    DataProvider
   ]
 })
 export class AppModule { }

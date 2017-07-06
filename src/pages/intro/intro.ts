@@ -1,3 +1,4 @@
+import { DataProvider } from './../../providers/data/data';
 import { Http } from '@angular/http';
 import { WorkPage } from './../work/work';
 import { SeminarPage } from './../seminar/seminar';
@@ -14,11 +15,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-intro',
   templateUrl: 'intro.html',
+  providers: [DataProvider]
 })
 export class IntroPage {
 
 
-  public info = [];
   // public info = {
   //   "fullname": "Mohd Mazlan Bin Mohd Nor",
   //   "dob": "17 MEI 1992",
@@ -146,14 +147,16 @@ export class IntroPage {
   //   }
   //   ]
   // };
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
-    let localData = http.get('https://rawgit.com/mazlanmohdnor/myresumev2/master/src/assets/data.json')
-      .map(res => res.json());
 
-    localData.subscribe(data => {
+  public info = new Array();
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, public localData: DataProvider) {
+
+
+    localData.getData().subscribe(data => {
       this.info = data;
 
-      console.log(this.info);
+      // console.log(this.info);
     })
 
   }
