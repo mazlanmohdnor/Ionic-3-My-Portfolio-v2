@@ -1,0 +1,23 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+        <ion-title>My Youtube</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal" (click)="presentModal()">
+              <ion-icon name="information-circle"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+    <!--<ion-searchbar (input)="getItems($event) " color="primary "></ion-searchbar>-->
+</ion-header>
+
+
+<ion-content class="card-background-page ">
+    <ion-card *ngFor="let video of videos " (click)="startVideo(video.id.videoId) ">
+        <img src="{{video.snippet.thumbnails.medium.url}} " />
+        <div class="card-title ">{{video.snippet.title}}</div>
+        <div class="card-subtitle ">{{video.snippet.description}}</div>
+    </ion-card>
+
+</ion-content>

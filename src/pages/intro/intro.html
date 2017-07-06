@@ -1,0 +1,199 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title align-center>
+            My Resume
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <!--header-->
+    <div class="tab-header">
+        <div class="circular"></div>
+        <h2>{{info.fullname}}</h2> <br>{{info.address.street}} <br>{{info.address.street2}}<br> Phone No: {{info.phone}} <br>Email : {{info.email}}
+    </div>
+
+    <!--1st card-->
+    <ion-card class="overlap">
+        <ion-card-content>
+            <ion-card-header color="primary">
+                <ion-icon item-start name="contact"></ion-icon> About Me
+            </ion-card-header>
+
+            <div class="bio">
+                <p class="p-home">
+                    Passionate Front-end developer with over 2 year of experience. Recently more focus on developing mobile hybrid apps and web develpment.
+                </p>
+            </div>
+            <br>
+            <div class="bio">
+                <p class="p-home">
+                    My goal is to write clean, highest performance and test covered code in order to provide smooth and bugs free software. Back in days I was working a lot with vanila Javascript, Later jQuery and jQuery Mobile and of course other front-end framework available
+                    out there. But now then I have started to use AngularJS and of course Ionic Framework. Using and creating web components is the future web development, that is where I am heading.
+                </p>
+            </div>
+            <br>
+            <div class="bio">
+                <p class="p-home">
+                    Good UX design makes efficient. You can have all the functionality that user needs but if your app is hard to understand, then it will be useless. My new field of study is UI/UX design, what methods is used in order to achieve great UI/UX and how to implement
+                    the technology into real application. And I believe, with my efford, I can go much further and improve my skills to meet industry needs.
+                </p>
+            </div>
+        </ion-card-content>
+    </ion-card>
+
+    <!--card 2-->
+    <div>
+        <ion-slides loop="true" pager autoplay="5000">
+            <!--personal detail-->
+            <ion-slide>
+                <ion-card>
+                    <ion-card-header class="card-header-2">
+                        <ion-icon item-start name="contact"></ion-icon>
+                        Personal Detail
+                    </ion-card-header>
+                    <ion-card-content class="card-slide">
+                        <ion-list>
+                            <ion-item>
+                                <ion-icon item-start name="calendar"></ion-icon>
+                                <h6>Date of Birth</h6>
+                                <b>{{info.dob}}</b>
+                            </ion-item>
+                            <ion-item>
+                                <ion-icon item-start name="card"></ion-icon>
+                                <h6>Natioanality</h6>
+                                <b>{{info.nationality}}</b>
+                            </ion-item>
+                            <ion-item>
+                                <ion-icon item-start name="man"></ion-icon>
+                                <h6>Race</h6>
+                                <b>{{info.race}}</b>
+                            </ion-item>
+                            <ion-item>
+                                <ion-icon item-start name="cloudy-night"></ion-icon>
+                                <h6>Religion</h6>
+                                <b>{{info.religion}}</b>
+                            </ion-item>
+                            <ion-item>
+                                <ion-icon item-start name="stats"></ion-icon>
+                                <h6>Status</h6>
+                                <b>{{info.status}}</b>
+                            </ion-item>
+                            <ion-item>
+                                <ion-icon item-start name="logo-android"></ion-icon>
+                                <h6>Language</h6>
+                                <b>{{info.language}}</b>
+                            </ion-item>
+                        </ion-list>
+                    </ion-card-content>
+                </ion-card>
+            </ion-slide>
+            <!--education Background-->
+            <ion-slide>
+                <ion-card>
+                    <ion-card-header class="card-header-2">
+                        <ion-icon item-start name="school"></ion-icon>
+                        Education Background
+                    </ion-card-header>
+                    <ion-card-content text-wrap class="card-slide">
+                        <ion-list>
+                            <ion-item>
+                                <ion-thumbnail item-start>
+                                    <img src="assets/upm.jpg">
+                                </ion-thumbnail>
+                                <b>{{info.education.Bachelor.title}}</b>
+                                <p>{{info.education.Bachelor.major}}</p>
+                                <p>{{info.education.Bachelor.place}}</p>
+                                <p>{{info.education.Bachelor.year}}</p>
+                                <p>{{info.education.Bachelor.cgpa}}</p>
+                            </ion-item>
+                            <ion-item>
+                                <ion-thumbnail item-start>
+                                    <img src="assets/psis.jpg">
+                                </ion-thumbnail>
+                                <b>{{info.education.Diploma.title}}</b>
+                                <p>{{info.education.Diploma.major}}</p>
+                                <p>{{info.education.Diploma.place}}</p>
+                                <p>{{info.education.Diploma.year}}</p>
+                                <p>{{info.education.Diploma.cgpa}}</p>
+                            </ion-item>
+                            <ion-item>
+                                <ion-thumbnail item-start>
+                                    <img src="assets/saas.jpg">
+                                </ion-thumbnail>
+                                <b>{{info.education.SPM.title}}</b>
+                                <p>{{info.education.SPM.place}}</p>
+                                <p>{{info.education.SPM.year}}</p>
+                            </ion-item>
+                        </ion-list>
+                    </ion-card-content>
+                </ion-card>
+            </ion-slide>
+            <!--knowledge-->
+            <ion-slide>
+                <ion-card>
+                    <ion-card-header class="card-header-2">
+                        <ion-icon item-start name="logo-android"></ion-icon> Knowledge
+                    </ion-card-header>
+                    <ion-card-content text-wrap class="card-slide">
+                        <div class="slide-3">
+                            <ion-icon item-start name="book" color="primary"></ion-icon> Computer Literacy
+                        </div>
+                        <p class="p-home bio">{{info.knowledge.computer}}</p>
+                        <br>
+                        <div class="slide-3">
+                            <ion-icon item-start name="book"></ion-icon> Personal Traits
+                        </div>
+                        <p class="p-home bio">{{info.knowledge.personal}}</p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-slide>
+            <!--interest-->
+            <ion-slide>
+                <ion-card>
+                    <ion-card-header class="card-header-2">
+                        <ion-icon item-start name="bicycle"></ion-icon> Interest
+                    </ion-card-header>
+                    <ion-card-content text-wrap class="card-slide">
+                        <ion-list no-lines>
+                            <p ion-item *ngFor="let info of info.interest">
+                                <ion-icon item-start name="arrow-forward" color="primary"></ion-icon>
+                                {{ info }}
+                            </p>
+                        </ion-list>
+                    </ion-card-content>
+                </ion-card>
+            </ion-slide>
+            <!--archievement-->
+            <ion-slide>
+                <ion-card>
+                    <ion-card-header class="card-header-2">
+                        <ion-icon item-start name="flame"></ion-icon> Achievement
+                    </ion-card-header>
+                    <ion-card-content text-wrap class="card-slide">
+                        <ion-list no-lines>
+                            <p ion-item *ngFor="let info of info.achievement">
+                                <ion-icon item-start name="arrow-forward" color="primary"></ion-icon>
+                                {{ info }}
+                            </p>
+                        </ion-list>
+                    </ion-card-content>
+                </ion-card>
+            </ion-slide>
+        </ion-slides>
+    </div>
+
+    <!--3rd row-->
+    <div class="btn-seminar">
+        <button ion-button icon-left large block (click)="goSeminar()">  
+            <ion-icon name="home"></ion-icon>Workshops Attended
+        </button>
+    </div>
+
+    <!--4th row-->
+    <div class="btn-seminar">
+        <button ion-button icon-left large block (click)="goWork()">  
+            <ion-icon name="home"></ion-icon>Working Experience
+        </button>
+    </div>
+</ion-content>

@@ -1,0 +1,36 @@
+page-youtube {
+    ion-card {
+        position: relative;
+        text-align: center;
+    }
+    .card-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-left: 20px;
+        padding-right: 20px;
+        position: absolute;
+        top: 42%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+    }
+    .card-subtitle {
+        white-space: nowrap;
+        font-size: 1.0em;
+        position: absolute;
+        top: 58%;
+        width: 100%;
+        overflow: hidden;
+        color: #fff;
+        text-overflow: ellipsis;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    ion-card>img {
+        object-fit: cover;
+        width: 100%;
+        filter: brightness(40%) blur(2px);
+    }
+}

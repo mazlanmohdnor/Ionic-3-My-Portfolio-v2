@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-navbar color="primary">
+
+        <ion-title>My Instagram</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal" (click)="presentModal()">
+              <ion-icon name="information-circle"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-card *ngFor="let image of images">
+
+        <ion-item>
+            <ion-avatar item-start>
+                <img src="{{image.user.profile_picture}}">
+            </ion-avatar>
+            <button ion-button round (click)="launchIG();">{{image.user.full_name}}</button>
+            <p class="date"> {{image.created_time * 1000 | date: 'dd/MM/yyyy'}}</p>
+        </ion-item>
+        <a href="{{image.link}}">
+            <img src="{{image.images.standard_resolution.url}}">
+        </a>
+        <ion-card-content>
+            <p>{{image.caption.text}}</p>
+        </ion-card-content>
+        <hr>
+        <ion-row class="rowcol">
+            <ion-col>
+                <button ion-button icon-left clear small>
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <div>{{image.likes.count}} Likes</div>
+                </button>
+            </ion-col>
+            <ion-col>
+                <button ion-button icon-left clear small>
+                    <ion-icon name="text"></ion-icon>
+                    <div>{{image.comments.count}} Comments</div>
+                </button>
+            </ion-col>
+
+        </ion-row>
+
+    </ion-card>
+</ion-content>

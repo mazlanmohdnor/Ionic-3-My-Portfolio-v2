@@ -1,0 +1,31 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+        <ion-title>Working Experience</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-card *ngFor="let info of info.experience">
+        <img src="{{info.img}}" />
+        <ion-card-content>
+            <ion-card-title>
+                {{info.company}}
+            </ion-card-title>
+            <b>{{info.job}}</b>
+            <p>{{info.date}}</p>
+            <p>{{info.place}}</p>
+
+            <ion-list no-lines>
+                <p ion-item *ngFor="let info of info.responsibility" text-wrap>
+                    <ion-icon item-start name="arrow-forward" color="primary"></ion-icon>
+                    {{ info }}
+                </p>
+            </ion-list>
+
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>
