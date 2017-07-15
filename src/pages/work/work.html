@@ -7,16 +7,28 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="bg-style">
     <ion-card *ngFor="let info of info.experience">
         <img src="{{info.img}}" />
         <ion-card-content>
             <ion-card-title>
                 {{info.company}}
             </ion-card-title>
-            <b>{{info.job}}</b>
-            <p>{{info.date}}</p>
-            <p>{{info.place}}</p>
+            <ion-chip>
+                <ion-icon item-start name="bowtie"></ion-icon>
+                <ion-label>{{info.job}}</ion-label>
+            </ion-chip>
+            <ion-chip>
+                <ion-icon item-start name="calendar"></ion-icon>
+                <ion-label>{{info.date}}</ion-label>
+            </ion-chip>
+            <ion-chip>
+                <ion-icon item-start name="pin"></ion-icon>
+                <ion-label>{{info.place}}</ion-label>
+            </ion-chip>
+            <b></b>
+            <p></p>
+            <p></p>
 
             <ion-list no-lines>
                 <p ion-item *ngFor="let info of info.responsibility" text-wrap>

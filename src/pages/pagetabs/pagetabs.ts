@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 
-import { ContactMePage } from './../contact-me/contact-me';
+//tabs page
+import { ContactPage } from './../contact/contact';
+import { GithubPage } from './../github/github';
 import { InstagramPage } from './../instagram/instagram';
 import { YoutubePage } from './../youtube/youtube';
 import { IntroPage } from './../intro/intro';
@@ -10,14 +12,20 @@ import { IntroPage } from './../intro/intro';
   selector: 'page-pagetabs',
   templateUrl: 'pagetabs.html'
 })
-@IonicPage()
+// @IonicPage()
 export class PagetabsPage {
 
   introRoot = IntroPage;
   youtubeRoot = YoutubePage;
   instagramRoot = InstagramPage;
-  contactMeRoot = ContactMePage;
+  githubRoot = GithubPage;
+  contactRoot = ContactPage;
 
+  // page1: any = IntroPage;
+  // page2: any = YoutubePage;
+  // page3: any = InstagramPage;
+  // page4: any = GithubPage;
+  // page5: any = ContactMePage;
 
   constructor(public navCtrl: NavController) { }
 

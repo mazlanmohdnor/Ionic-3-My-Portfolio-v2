@@ -8,18 +8,23 @@ import { HttpModule, JsonpModule } from '@angular/http';
 //native  plugins
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { Network } from '@ionic-native/network';
+import { EmailComposer } from '@ionic-native/email-composer';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 //modal page
 import { IgmodalPage } from './../pages/igmodal/igmodal';
 import { YoutubemodalPage } from './../pages/youtubemodal/youtubemodal';
+import { GithubmodalPage } from './../pages/githubmodal/githubmodal';
 
 import { MyApp } from './app.component';
 
 //pages
 import { IntroPage } from './../pages/intro/intro';
-import { ContactMePage } from './../pages/contact-me/contact-me';
 import { InstagramPage } from './../pages/instagram/instagram';
 import { YoutubePage } from './../pages/youtube/youtube';
+import { GithubPage } from './../pages/github/github';
+import { ContactPage } from './../pages/contact/contact';
 import { PagetabsPage } from './../pages/pagetabs/pagetabs';
 import { SeminarPage } from './../pages/seminar/seminar';
 import { WorkPage } from './../pages/work/work';
@@ -28,25 +33,33 @@ import { WorkPage } from './../pages/work/work';
 import { YoutubeProvider } from '../providers/youtube/youtube';
 import { IgProvider } from '../providers/ig/ig';
 import { DataProvider } from '../providers/data/data';
+import { GithubProvider } from '../providers/github/github';
+import { ElasticHeader } from '../directives/elastic-header/elastic-header';
+import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-header';
+
 
 @NgModule({
   declarations: [
     MyApp,
-    ContactMePage,
     InstagramPage,
     YoutubePage,
     IntroPage,
+    GithubPage,
+    ContactPage,
     PagetabsPage,
     YoutubemodalPage,
     IgmodalPage,
+    GithubmodalPage,
     SeminarPage,
-    WorkPage
+    WorkPage,
+    ElasticHeader,
+    ParallaxHeaderDirective,
   ],
   imports: [
     BrowserModule,
     HttpModule,
     JsonpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -54,12 +67,14 @@ import { DataProvider } from '../providers/data/data';
     IntroPage,
     YoutubePage,
     InstagramPage,
-    ContactMePage,
+    GithubPage,
+    ContactPage,
     PagetabsPage,
     YoutubemodalPage,
     IgmodalPage,
+    GithubmodalPage,
     SeminarPage,
-    WorkPage
+    WorkPage,
 
   ],
   providers: [
@@ -70,7 +85,11 @@ import { DataProvider } from '../providers/data/data';
     YoutubeVideoPlayer,
     IgProvider,
     InAppBrowser,
-    DataProvider
+    DataProvider,
+    Network,
+    GithubProvider,
+    EmailComposer,
+    SocialSharing,
   ]
 })
 export class AppModule { }

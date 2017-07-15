@@ -1,0 +1,99 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+                <span ion-text >Dismiss</span>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content parallax-header no-bounce class="bg-modal">
+    <div class="header-image"></div>
+    <div class="main-content" text-wrap>
+        <ion-card class="overlap">
+            <ion-card-header>
+                <h2>What included in this tab</h2>
+            </ion-card-header>
+            <ion-card-content>
+
+
+
+                <p>As ususal, everything that you see is coming from API. To use Github API is a simple and easy process. You dont have to obtain the private key and what so ever, you just need a username.
+                </p>
+
+                <p>
+                    First thing we need to do is create a provider to handle the request to the api, ionic provides a generator for this
+                </p>
+                <pre class="code">ionic g provider github</pre>
+
+                <p>
+                    Since we will be using the Http service in this tutorial, we will need to import the HttpModule in our app.module.ts file.
+                </p>
+                <pre class="code">
+import {{"{"}} HttpModule {{"}"}} from '@angular/http'
+
+imports: [
+    BrowserModule,
+    HttpModule,
+    IonicModule.forRoot(MyApp)
+  ],
+                </pre>
+
+                <p>
+                    After that, we can use the http module to make http request in our youtube provider.
+                </p>
+
+                <pre class="code">
+import {{"{"}} Http {{"}"}} from '@angular/http';
+
+export class GithubProvider {{"{"}}
+   getRepo() {{"{"}}
+    return this.http.get('https://api.github.com/users/mazlanmohdnor/repos')
+      .map(res => res.json());
+  {{"}"}}
+
+   getUser(){{"{"}}
+    return this.http.get('https://api.github.com/users/mazlanmohdnor')
+      .map(res => res.json());
+  {{"}"}}
+
+
+                </pre>
+
+                <p>
+                    Now go to our Instagram page .ts, we using several native plugin to increase user experience and make this app as native as possibe same as youtube page. Im importing LoadingController (to show loading animation), and ModalController (to use modal) from
+                    ionic-angular.
+                </p>
+                <p>
+                    For native plugin, im using InAppBrowser plugin to allow user using inappbrowser functionality.
+                </p>
+
+                <pre class="code">
+import {{"{"}} NavController, NavParams, LoadingController, ModalController,  {{"}"}} from 'ionic-angular';  
+
+//provider
+import {{"{"}} GithubProvider {{"}"}} from './../../providers/github/github';
+
+//native plugin
+import {{"{"}} InAppBrowser {{"}"}} from '@ionic-native/in-app-browser';
+                </pre>
+
+                <p>
+                    The thing that happend in this process is:</p>
+                <p>1. Im using a loader to act as an indicator that telling you that the user information and public repo is being fetch from github api.
+                </p>
+                <p> 2. After it returned the respond, Im binding the information in a user and repo array so that I can use it in view.</p>
+                <p>3. If you tap on my repo, it will open up inappbrowser showing my repository</p>
+
+                <p>*Network status and toast animation is still there to tell if the device connected or disconnected. You can try disabe you internet now, and see what happen.</p>
+
+                <p>
+                    Im also implementing pull to refresh, you can try it out by pulling down the screen content.
+                </p>
+            </ion-card-content>
+        </ion-card>
+
+    </div>
+
+</ion-content>

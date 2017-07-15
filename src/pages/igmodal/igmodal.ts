@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 
 /**
  * Generated class for the IgmodalPage page.
@@ -7,7 +7,7 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-igmodal',
   templateUrl: 'igmodal.html',

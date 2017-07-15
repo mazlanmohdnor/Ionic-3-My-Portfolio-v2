@@ -1,64 +1,88 @@
-page-intro {
-    .tab-header {
-        padding-top: 20px;
-        color: white;
-        text-align: center;
-        // background: #f53d3d;
-        background: url(../assets/1.jpg);
-        background-size: cover;
-        background-position: center center;
-        padding-bottom: 60px;
-    }
-    .overlap {
-        margin-top: -40px;
-    }
-    .circular {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        -webkit-border-radius: 150px;
-        -moz-border-radius: 150px;
-        border: solid;
-        background: url(../assets/avatar2.jpg) no-repeat;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 20px;
-    }
-    .p-home {
-        text-align: justify;
-    }
-    .bio {
-        padding-left: 35px;
-        padding-right: 15px;
-    }
-    .card-header-2 {
-        background-color: #f53d3d;
-        color: #fff;
-        font-size: 1.5em;
-        // padding: 0px;
-        // margin: 0px;
-    }
-    .card-slide {
-        margin-top: 10px;
-        height: 450px;
-    }
-    .list-ios>.item-block:first-child {
-        border-top: none;
-    }
-    .list-ios>.item-block:last-child {
-        border-bottom: none;
-    }
-    .btn-seminar {
-        // margin: 0 auto;
-        padding-left: 8px;
-        padding-right: 8px;
-    }
-    .slide-3 {
-        color: #f53d3d;
-        text-align: left;
-        padding-left: 15px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-}
+        page-intro {
+            .header-image {
+                background: url(../assets/intro.jpg);
+                background-size: cover;
+                background-position: center;
+                // height: 50vw;
+                position: relative;
+                z-index: -1;
+            }
+            .main-content {
+                -webkit-transform: translatez(0);
+                -moz-transform: translatez(0);
+                -ms-transform: translatez(0);
+                -o-transform: translatez(0);
+                transform: translatez(0);
+                position: relative !important;
+                // padding: 20px;
+                // background-color: white;
+            }
+            .tab-header {
+                padding-top: 20px;
+                color: white;
+                text-align: center;
+                // background: #f53d3d;
+                // background: url(../assets/1.jpg);
+                background-size: cover;
+                background-position: center center;
+                padding-bottom: 60px;
+            }
+            .overlap {
+                margin-top: -40px;
+            }
+            .circular {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                -webkit-border-radius: 150px;
+                -moz-border-radius: 150px;
+                border: solid;
+                background: url(../assets/avatar2.jpg) no-repeat;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 20px;
+            }
+            .p-home {
+                text-align: justify;
+            }
+            .bio {
+                padding-left: 20px;
+                padding-right: 15px;
+            }
+            .card-header-2 {
+                background-color: #FE686A;
+                color: #fff;
+                // font-size: 1em;
+                // padding: 0px;
+                // margin: 0px;
+            }
+            .card-slide {
+                margin-top: 10px;
+                height: 450px;
+            }
+            .list-ios>.item-block:first-child {
+                border-top: none;
+            }
+            .list-ios>.item-block:last-child {
+                border-bottom: none;
+            }
+            .btn-seminar {
+                // margin: 0 auto;
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            .slide-3 {
+                // color: #f53d3d;
+                text-align: left;
+                padding-left: 15px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+            .icon-size {
+                font-size: 50px; //Preferred size here
+            }
+            .chip-text {
+                margin-top: 5px;
+            }
+        }

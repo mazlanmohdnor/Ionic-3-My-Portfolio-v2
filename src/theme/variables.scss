@@ -22,7 +22,7 @@ $app-direction: ltr;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 $colors: ( // primary:    #488aff,
-primary: #f53d3d, secondary: #32db64, danger: #f53d3d, light: #f4f4f4, dark: #222);
+primary: #FE686A, secondary: #32db64, danger: #f53d3d, light: #f4f4f4, dark: #222, ionic:#2597FF, fb:#4867AA, gplus:#D95232, yt:#E62117, twitter:#1DA1F2);
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
@@ -48,3 +48,4 @@ primary: #f53d3d, secondary: #32db64, danger: #f53d3d, light: #f4f4f4, dark: #22
 // --------------------------------------------------
 @import "roboto";
 @import "noto-sans";
+$item-md-detail-push-show:true;

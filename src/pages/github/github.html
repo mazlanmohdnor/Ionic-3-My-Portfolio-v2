@@ -1,0 +1,70 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+        <ion-title>My Github</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal" (click)="presentModal()">
+              <ion-icon name="information-circle"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg-style">
+    <ion-card>
+        <ion-card-content>
+
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-4> <img [src]="user.avatar_url" class="circular" alt="avatar"></ion-col>
+                    <ion-col col-8>
+                        {{user.name}}<br>
+                        <p class="bio">{{user.bio}}</p>
+                        <a button ion-button icon-left round block href="{{user.html_url}}">
+                            <ion-icon name="logo-github"></ion-icon>
+                            View Profile
+                        </a>
+                        <ion-chip>
+                            <ion-icon item-start name="contacts"></ion-icon>
+                            <ion-label class="chip-text-work">{{user.followers}} Followers | {{user.following}} Following</ion-label>
+                        </ion-chip>
+
+
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+        </ion-card-content>
+    </ion-card>
+
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingText="Pull to refresh" pullingIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="Refreshing">
+        </ion-refresher-content>
+    </ion-refresher>
+    <ion-card>
+        <ion-card-header class="card-header-2">
+            <ion-icon item-start name="cloud"></ion-icon>
+            {{user.public_repos}} Public Repos
+
+        </ion-card-header>
+        <ion-card-content class="card-repo">
+            <ion-list>
+                <ion-item *ngFor="let repo of repos" (tap)="repoDetail(repo.name)" tappable detail-push>
+                    <ion-icon name="filing" item-start></ion-icon>
+                    <b> {{repo.name}}</b>
+                    <!--<p>{{repo.updated_at}}</p>-->
+
+                    <p> {{repo.description}}</p>
+
+
+                    <h3>
+                        <ion-icon name="radio-button-on" color="secondary"></ion-icon> {{repo.language}}</h3>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

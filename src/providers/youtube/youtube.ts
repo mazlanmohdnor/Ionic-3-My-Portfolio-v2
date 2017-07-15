@@ -21,8 +21,8 @@ export class YoutubeProvider {
 
   getVideo() {
     return this.http.get('https://www.googleapis.com/youtube/v3/search', { params: this.youtubeParams })
-      .map(res => res.json())
-      .map(res => res.items)
+      .map(res => res.json().items);
   }
+
 
 }

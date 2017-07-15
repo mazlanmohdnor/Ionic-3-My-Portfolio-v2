@@ -1,3 +1,47 @@
 page-youtubemodal {
-
+    .header-image {
+        background-image: url(../assets/yt.jpg);
+        height: 35vh;
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+        z-index: -1;
+    }
+    .main-content {
+        // padding: 20px;
+        // background-color: white;
+        // background: #F5F5F5;
+        position: relative !important;
+    }
+    .overlap {
+        margin-top: -30px;
+    }
+    p {
+        margin-bottom: 1em !important;
+        // background-color: blue;
+    }
+    ion-item p {
+        color: black !important;
+    }
+    .code {
+        font-size: .8em;
+        padding: 1em;
+        // padding-bottom: 1em;
+        white-space: pre-wrap;
+        /* css-3 */
+        white-space: -moz-pre-wrap;
+        /* Mozilla, since 1999 */
+        white-space: -pre-wrap;
+        /* Opera 4-6 */
+        white-space: -o-pre-wrap;
+        /* Opera 7 */
+        word-wrap: break-word;
+        /* Internet Explorer 5.5+ */
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        margin: 1em 0;
+        background-color: #002B36;
+        color: white;
+    }
 }

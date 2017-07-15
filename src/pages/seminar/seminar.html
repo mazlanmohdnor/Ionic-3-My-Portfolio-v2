@@ -7,7 +7,7 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="bg-style">
 
     <ion-card *ngFor="let info of info.seminar">
         <img src="{{info.img}}" />
@@ -15,10 +15,15 @@
             <ion-card-title>
                 {{info.title}}
             </ion-card-title>
+            <ion-chip>
+                <ion-icon item-start name="calendar"></ion-icon>
+                <ion-label>{{info.date}}</ion-label>
+            </ion-chip>
+            <hr>
             <p>
                 {{info.conduct}}
             </p>
-            <p>{{info.date}}</p>
+
         </ion-card-content>
     </ion-card>
 </ion-content>

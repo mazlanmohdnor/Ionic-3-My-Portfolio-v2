@@ -1,25 +1,130 @@
-<!--
-  Generated template for the YoutubemodalPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
     <ion-navbar color="primary">
-        <ion-title>Tab Information</ion-title>
         <ion-buttons start>
             <button ion-button (click)="dismiss()">
-        <span ion-text >Dismiss</span>
-        <!--<ion-icon name="close"></ion-icon>-->
-      </button>
+                <span ion-text >Dismiss</span>
+            </button>
         </ion-buttons>
-
     </ion-navbar>
-
 </ion-header>
 
+<ion-content parallax-header no-bounce class="bg-modal">
+    <div class="header-image"></div>
+    <div class="main-content" text-wrap>
+        <ion-card class="overlap">
+            <ion-card-header>
+                <h2>What included in this tab</h2>
+            </ion-card-header>
+            <ion-card-content>
 
-<ion-content padding>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis accusamus blanditiis doloribus ad a atque sit fugit aut dignissimos omnis, molestiae, facilis labore adipisci aliquid corporis nostrum dolorum quod sed!
+
+
+                <p>Everything that you see is coming from Youtube API. Its allows developers to access video statistics and YouTube channels' data via two types of calls, REST and XML-RPC. And of course Im using REST, because who else doesnt use REST nowadays?
+                </p>
+
+                <p>
+                    To use Youtube API is a straigt forward process and you can refer to youtube api documentation. In order to implement the api, i have to obtain the private key and also my youtube ID, as this will be used as a parameter in the uri later. This is the steps
+                    to register any application and obtain the private key. <br>* Im not require to use authorization, so no need to bother about OAuth, so just skip it.
+                </p>
+
+                <p>1. You need a Google Account to access the Google Developers Console, request an API key, and register your application. </p>
+                <p>2. Create a project in the Google Developers Console and obtain authorization credentials so your application can submit API requests.
+                </p>
+                <p>3. After creating your project, make sure the YouTube Data API is one of the services that your application is registered to use:
+                </p>
+                <ion-list inset>
+                    <ion-item>
+                        <p>a. Go to the Developers Console and select the project that you just registered.</p>
+                    </ion-item>
+                    <ion-item>
+                        <p>b. Open the API Library in the Google Developers Console. If prompted, select a project or create a new one. In the list of APIs, make sure the status is ON for the YouTube Data API v3.</p>
+                    </ion-item>
+                </ion-list>
+
+                <p>
+                    We are now have the key and youtube ID, lets moving on to Ionic. Since we are pulling in data from an external source, ionic provides a nice service that allow use to pull in remote data using Http service.
+                </p>
+                <p>
+                    First thing we need to do is create a provider to handle the request to the api, ionic provides a generator for this
+                </p>
+                <pre class="code">ionic g provider youtube</pre>
+
+                <p>
+                    Since we will be using the Http service in this tutorial, we will need to import the HttpModule in our app.module.ts file.
+                </p>
+                <pre class="code">
+import {{"{"}} HttpModule {{"}"}} from '@angular/http'
+
+imports: [
+    BrowserModule,
+    HttpModule,
+    IonicModule.forRoot(MyApp)
+  ],
+                </pre>
+
+                <p>
+                    After that, we can use the http module to make http request in our youtube provider.
+                </p>
+
+                <pre class="code">
+import {{"{"}} Http {{"}"}} from '@angular/http';
+
+export class YoutubeProvider {{"{"}}
+  private youtubeParams = {{"{"}}
+    key: 'our key',
+    type: 'video',
+    maxResults: '50',
+    part: 'id,snippet',
+    order: 'viewCount',
+    channelId: 'UChz-g669jwIJApRuguWrT1w',
+  {{"}"}}
+
+  constructor(public http: Http) {{"{"}}
+    console.log('Hello YoutubeProvider Provider');
+  {{"}"}}
+
+  getVideo() {{"{"}}
+    return this.http.get('https://www.googleapis.com/youtube/v3/search', {{"{"}} params: this.youtubeParams {{"}"}})
+      .map(res => res.json().items);
+  {{"}"}}
+
+                </pre>
+
+                <p>
+                    Now go to our youtube page .ts, this is the tricky part, we have to include several native plugin to increase user experience and make this app as native as possibe. Im importing LoadingController (to show loading animation), ModalController (to use modal)
+                    and ToastController (to show information about your connection) from ionic-angular.
+                </p>
+                <p>
+                    For native plugin, im using YoutubeVideoPlayer and Network. This also provides by ionic, and there is much more native plugin that you can take a look at.
+                </p>
+
+                <pre class="code">
+import {{"{"}} NavController, NavParams, LoadingController, ModalController, ToastController {{"}"}} from 'ionic-angular';  
+
+//provider
+import {{"{"}} YoutubeProvider {{"}"}} from './../../providers/youtube/youtube';
+
+//native plugin
+import {{"{"}} YoutubeVideoPlayer {{"}"}} from '@ionic-native/youtube-video-player';
+import {{"{"}} Network {{"}"}} from '@ionic-native/network';
+                </pre>
+
+                <p>
+                    The thing that happend in this process is:</p>
+                <p>1. Im using a loader to act as an indicator that telling you that the video is being fetch from youtube.
+                </p>
+                <p> 2. After it returned the respond, Im binding the information in a videos array so that I can use it in view.</p>
+                <p> 3. Then im using native plugin to display the video, and if you click one of the video, it will open up youtube app, and play it directly there.</p>
+
+                <p>Im also implementing network status and toast animation to tell if the device connected or disconnected. You can try disabe you internet now, and see what happen.</p>
+
+
+                <p>
+                    Im also implementing pull to refresh, you can try it out by pulling down the screen content.
+                </p>
+            </ion-card-content>
+        </ion-card>
+
+    </div>
+
 </ion-content>

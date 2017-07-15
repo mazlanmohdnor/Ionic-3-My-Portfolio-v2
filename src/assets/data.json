@@ -10,10 +10,7 @@
     "language": "Bahasa, English",
     "email": "mazlan04@gmail.com",
     "phone": "0196749632",
-    "address": {
-        "street": "No 2 Lot 657 Jalan Bukit Rotan",
-        "street2": "Batu 1 45000 Kuala Selangor"
-    },
+    "address": [{ "street": "No 2 Lot 657 Jalan Bukit Rotan" }, { "street2": "Batu 1 45000 Kuala Selangor" }],
 
     "education": {
         "Bachelor": {

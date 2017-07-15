@@ -12,7 +12,11 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="bg-style">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingText="Pull to refresh" pullingIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="Refreshing">
+        </ion-refresher-content>
+    </ion-refresher>
     <ion-card *ngFor="let image of images">
 
         <ion-item>
@@ -29,21 +33,19 @@
             <p>{{image.caption.text}}</p>
         </ion-card-content>
         <hr>
-        <ion-row class="rowcol">
-            <ion-col>
-                <button ion-button icon-left clear small>
-                    <ion-icon name="thumbs-up"></ion-icon>
-                    <div>{{image.likes.count}} Likes</div>
-                </button>
-            </ion-col>
-            <ion-col>
-                <button ion-button icon-left clear small>
-                    <ion-icon name="text"></ion-icon>
-                    <div>{{image.comments.count}} Comments</div>
-                </button>
-            </ion-col>
+        <div class="rowcol">
+            <ion-chip>
+                <ion-icon item-start name="thumbs-up"></ion-icon>
+                <ion-label class="chip-text-work">{{image.likes.count}} Likes</ion-label>
+            </ion-chip>
 
-        </ion-row>
+            <ion-chip>
+                <ion-icon item-start name="text"></ion-icon>
+                <ion-label class="chip-text-work">{{image.comments.count}} Comments</ion-label>
+            </ion-chip>
+        </div>
+
+
 
     </ion-card>
 </ion-content>

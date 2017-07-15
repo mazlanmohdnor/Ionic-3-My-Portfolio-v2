@@ -9,11 +9,14 @@
         </ion-buttons>
     </ion-navbar>
 
-    <!--<ion-searchbar (input)="getItems($event) " color="primary "></ion-searchbar>-->
 </ion-header>
 
 
 <ion-content class="card-background-page ">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingText="Pull to refresh" pullingIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="Refreshing">
+        </ion-refresher-content>
+    </ion-refresher>
     <ion-card *ngFor="let video of videos " (click)="startVideo(video.id.videoId) ">
         <img src="{{video.snippet.thumbnails.medium.url}} " />
         <div class="card-title ">{{video.snippet.title}}</div>
