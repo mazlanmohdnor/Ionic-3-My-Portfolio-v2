@@ -32,14 +32,7 @@ export class GithubPage {
   doRefresh(refresher) {
     this.gitdata.getRepo().subscribe(gitdatas => {
       this.repos = gitdatas;
-      // this.owner = {
-      //   name: gitdatas[0].owner.login,
-      //   avatar: gitdatas[0].owner.avatar_url,
-      //   url: gitdatas[0].owner.html_url,
-      //   // repocount: this.user.public_repos,
-      //   // follower: this.user.followers
-      // };
-      // this.owner = gitdatas[0].owner;
+
       console.log(this.user);
     },
       //handle error  
@@ -70,12 +63,7 @@ export class GithubPage {
     let url = 'https://github.com/mazlanmohdnor/' + reponame;
     return this.iab.create(url);
 
-    // console.log(reponame);
-    // this.gitdata.getRepoDetail(reponame).subscribe(repodata => {
-    // console.log(repodata);
-    // this.repodetail = repodata;
-    // this.navCtrl.push(RepodetailPage, { 'repo': repodata })
-    // })
+
   }
 
 
