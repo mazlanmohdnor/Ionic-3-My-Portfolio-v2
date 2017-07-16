@@ -22,8 +22,8 @@
                 <p>Basically the process is quit simillar with youtube tab. Everything coming from API.</p>
 
                 <p>
-                    To use Instagram API, i have to obtain the access token and also my Instagram ID, as this will be used as a parameter in the api endpoint later. This is the steps to register any application and obtain the access token. <br>* Also
-                    Im not require to use authorization, so no need to bother about OAuth, so just skip it.
+                    To use Instagram API, i have to obtain the access token and also my Instagram ID, as this will be used as a parameter in the api endpoint later. This is the steps to register any application and obtain the access token. <br><br><i>* Also
+                    Im not require to use authorization, so no need to bother about OAuth, so just skip it.</i>
                 </p>
 
                 <p>1. Register a New Client. Go the Instagram developer website at http://instagram.com/developer/ </p>
@@ -50,7 +50,7 @@
                 <pre class="code">ionic g provider instagram</pre>
 
                 <p>
-                    Instagram is different, we not using httpmodule, instead we are using jsonp module to make a request, so we need to import the JsonpModule in our app.module.ts file.
+                    Instagram response is a little bit different, we not using httpmodule, instead we are using jsonp module to make a request, so we need to import the JsonpModule in our app.module.ts file.
                 </p>
                 <pre class="code">
 import {{"{"}} HttpModule, JsonpModule {{"}"}} from '@angular/http'
@@ -86,7 +86,7 @@ export class IgProvider {{"{"}}
                     ionic-angular.
                 </p>
                 <p>
-                    For native plugin, im using InAppBrowser plugin to allow user using inappbrowser functionality.
+                    For native plugin,I'm using InAppBrowser plugin to allow user using inappbrowser functionality.
                 </p>
 
                 <pre class="code">
@@ -100,16 +100,16 @@ import {{"{"}} InAppBrowser {{"}"}} from '@ionic-native/in-app-browser';
                 </pre>
 
                 <p>
-                    The thing that happend in this process is:</p>
+                    <b>The thing that happend in this process is:</b></p>
                 <p>1. Im using a loader to act as an indicator that telling you that the images is being fetch from instagram.
                 </p>
-                <p> 2. After it returned the respond, Im binding the information in a images array so that I can use it in view.</p>
+                <p> 2. After it returned the respond, I'm binding the information in an images array so that I can use it in view.</p>
                 <p>3. If you tap on my name, it will open up inappbrowser showing my ig profile</p>
-
+                <br>
                 <p>*Network status and toast animation is still there to tell if the device connected or disconnected. You can try disabe you internet now, and see what happen.</p>
 
                 <p>
-                    Im also implementing pull to refresh, you can try it out by pulling down the screen content.
+                    I also implementing pull to refresh, you can try it out by pulling down the screen content.
                 </p>
             </ion-card-content>
         </ion-card>

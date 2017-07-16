@@ -11,8 +11,6 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Network } from '@ionic-native/network';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { SocialSharing } from '@ionic-native/social-sharing';
-
-//modal page
 import { IgmodalPage } from './../pages/igmodal/igmodal';
 import { YoutubemodalPage } from './../pages/youtubemodal/youtubemodal';
 import { GithubmodalPage } from './../pages/githubmodal/githubmodal';
@@ -34,7 +32,6 @@ import { YoutubeProvider } from '../providers/youtube/youtube';
 import { IgProvider } from '../providers/ig/ig';
 import { DataProvider } from '../providers/data/data';
 import { GithubProvider } from '../providers/github/github';
-import { ElasticHeader } from '../directives/elastic-header/elastic-header';
 import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-header';
 
 
@@ -52,7 +49,6 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
     GithubmodalPage,
     SeminarPage,
     WorkPage,
-    ElasticHeader,
     ParallaxHeaderDirective,
   ],
   imports: [

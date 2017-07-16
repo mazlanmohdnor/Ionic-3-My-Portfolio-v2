@@ -13,18 +13,19 @@
     <div class="main-content" text-wrap>
         <ion-card class="overlap">
             <ion-card-header>
-                <h2>What included in this tab</h2>
+                <b>What included in this tab</b>
             </ion-card-header>
             <ion-card-content>
 
 
 
-                <p>Everything that you see is coming from Youtube API. Its allows developers to access video statistics and YouTube channels' data via two types of calls, REST and XML-RPC. And of course Im using REST, because who else doesnt use REST nowadays?
+                <p>Everything that you see is coming from Youtube API. Youtube API allows developers to access video statistics and YouTube channels' data via two types of calls, REST and XML-RPC. And of course Im using REST, because who else doesnt use
+                    REST nowadays?
                 </p>
 
                 <p>
-                    To use Youtube API is a straigt forward process and you can refer to youtube api documentation. In order to implement the api, i have to obtain the private key and also my youtube ID, as this will be used as a parameter in the uri later. This is the steps
-                    to register any application and obtain the private key. <br>* Im not require to use authorization, so no need to bother about OAuth, so just skip it.
+                    To use Youtube API is a straigt forward process and you can refer to youtube api documentation. In order to implement the api, I have to obtain the private key and also my youtube ID, as this will be used as a parameter in the uri later. This is the steps
+                    to register the application and obtain the private key. <br><br><i>* Im not require to use authorization, so no need to bother about OAuth, so just skip it.</i>
                 </p>
 
                 <p>1. You need a Google Account to access the Google Developers Console, request an API key, and register your application. </p>
@@ -42,7 +43,7 @@
                 </ion-list>
 
                 <p>
-                    We are now have the key and youtube ID, lets moving on to Ionic. Since we are pulling in data from an external source, ionic provides a nice service that allow use to pull in remote data using Http service.
+                    We now have the key and youtube ID, lets moving on to Ionic. Since we are pulling in data from an external source, ionic provides a nice service that allow use to pull in remote data using Http service.
                 </p>
                 <p>
                     First thing we need to do is create a provider to handle the request to the api, ionic provides a generator for this
@@ -95,7 +96,7 @@ export class YoutubeProvider {{"{"}}
                     and ToastController (to show information about your connection) from ionic-angular.
                 </p>
                 <p>
-                    For native plugin, im using YoutubeVideoPlayer and Network. This also provides by ionic, and there is much more native plugin that you can take a look at.
+                    For native plugin, im using YoutubeVideoPlayer and Network. This also provides by ionic, and there is much more native plugins that you can take a look at.
                 </p>
 
                 <pre class="code">
@@ -110,17 +111,17 @@ import {{"{"}} Network {{"}"}} from '@ionic-native/network';
                 </pre>
 
                 <p>
-                    The thing that happend in this process is:</p>
+                    <b>The thing that happend in this process is:</b></p>
                 <p>1. Im using a loader to act as an indicator that telling you that the video is being fetch from youtube.
                 </p>
-                <p> 2. After it returned the respond, Im binding the information in a videos array so that I can use it in view.</p>
-                <p> 3. Then im using native plugin to display the video, and if you click one of the video, it will open up youtube app, and play it directly there.</p>
+                <p> 2. After it returned the respond, I'm binding the information in a videos array so that I can use it in view later.</p>
+                <p> 3. Then I'm using native plugin to display the video, and if you click on one of the video, it will open up youtube app, and play it directly there.</p>
 
-                <p>Im also implementing network status and toast animation to tell if the device connected or disconnected. You can try disabe you internet now, and see what happen.</p>
+                <p>Im also implementing network status and toast animation to tell if the device connected or disconnected. You can try disable you internet now, and see what happen.</p>
 
 
                 <p>
-                    Im also implementing pull to refresh, you can try it out by pulling down the screen content.
+                    I also implementing pull to refresh, you can try it out by pulling down the screen content.
                 </p>
             </ion-card-content>
         </ion-card>
