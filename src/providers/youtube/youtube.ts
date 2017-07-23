@@ -9,9 +9,7 @@ export class YoutubeProvider {
     type: 'video',
     maxResults: '50',
     part: 'id,snippet',
-    // fields: 'items/id,items/snippet/title,items/snippet/description,items/snippet/thumbnails/default,items/snippet/channelTitle',
-    // q: query,
-    order: 'viewCount',
+    order: 'date',
     channelId: 'UChz-g669jwIJApRuguWrT1w',
   }
 

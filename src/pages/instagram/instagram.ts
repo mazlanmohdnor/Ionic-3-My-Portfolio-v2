@@ -16,11 +16,13 @@ import { IgProvider } from './../../providers/ig/ig';
   providers: [IgProvider]
 })
 export class InstagramPage {
+  noCon: boolean=false;
 
   public images = new Array();
   public loader = this.loadingCtrl.create({
     content: "Loading Images...",
   });
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, public igData: IgProvider, public loadingCtrl: LoadingController, public modalCtrl: ModalController, private iab: InAppBrowser, private toast: ToastController) {
 
     this.loader.present();
@@ -40,6 +42,8 @@ export class InstagramPage {
           showCloseButton: true,
           closeButtonText: 'Ok'
         }).present();
+        this.loader.dismiss();
+        this.noCon = true;
       },
       () => {
         this.loader.dismiss();

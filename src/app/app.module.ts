@@ -10,7 +10,6 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Network } from '@ionic-native/network';
 import { EmailComposer } from '@ionic-native/email-composer';
-import { SocialSharing } from '@ionic-native/social-sharing';
 import { IgmodalPage } from './../pages/igmodal/igmodal';
 import { YoutubemodalPage } from './../pages/youtubemodal/youtubemodal';
 import { GithubmodalPage } from './../pages/githubmodal/githubmodal';
@@ -34,7 +33,8 @@ import { DataProvider } from '../providers/data/data';
 import { GithubProvider } from '../providers/github/github';
 import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-header';
 
-
+//plugins
+import { IonicImageViewerModule} from 'ionic-img-viewer';
 @NgModule({
   declarations: [
     MyApp,
@@ -56,6 +56,7 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
     HttpModule,
     JsonpModule,
     IonicModule.forRoot(MyApp),
+    IonicImageViewerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -70,7 +71,7 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
     IgmodalPage,
     GithubmodalPage,
     SeminarPage,
-    WorkPage,
+    WorkPage
 
   ],
   providers: [
@@ -84,8 +85,7 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
     DataProvider,
     Network,
     GithubProvider,
-    EmailComposer,
-    SocialSharing,
+    EmailComposer
   ]
 })
 export class AppModule { }

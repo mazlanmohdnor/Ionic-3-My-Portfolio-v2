@@ -44,13 +44,14 @@
         "cordova-plugin-youtube-video-player": "^1.0.6",
         "es6-promise-plugin": "^4.1.0",
         "ionic-angular": "^3.5.0-201707121632",
+        "ionic-img-viewer": "^2.4.0",
         "ionic-parallax": "^0.2.0",
         "ionic-plugin-keyboard": "^2.2.1",
         "ionicons": "3.0.0",
+        "mx.ferreyra.callnumber": "~0.0.2",
         "rxjs": "5.4.0",
         "sw-toolbox": "3.6.0",
-        "zone.js": "0.8.12",
-        "mx.ferreyra.callnumber": "~0.0.2"
+        "zone.js": "0.8.12"
     },
     "devDependencies": {
         "@ionic/app-scripts": "^2.0.1-201707121621",

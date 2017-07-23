@@ -3,8 +3,9 @@
     <ion-navbar color="primary">
         <ion-title>My Github</ion-title>
         <ion-buttons end>
-            <button ion-button icon-only color="royal" (click)="presentModal()">
+            <button ion-button icon-left color="royal" (click)="presentModal()">
               <ion-icon name="information-circle"></ion-icon>
+              info
             </button>
         </ion-buttons>
     </ion-navbar>
@@ -13,7 +14,12 @@
 
 
 <ion-content class="bg-style">
-    <ion-card>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingText="Pull to refresh" pullingIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="Refreshing">
+        </ion-refresher-content>
+    </ion-refresher>
+
+    <ion-card [class.hide]="noCon">
         <ion-card-content>
 
             <ion-grid>
@@ -40,11 +46,8 @@
     </ion-card>
 
 
-    <ion-refresher (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content pullingText="Pull to refresh" pullingIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="Refreshing">
-        </ion-refresher-content>
-    </ion-refresher>
-    <ion-card>
+
+    <ion-card [class.hide]="noCon">
         <ion-card-header class="card-header-2">
             <ion-icon item-start name="cloud"></ion-icon>
             {{user.public_repos}} Public Repos
@@ -67,4 +70,14 @@
         </ion-card-content>
     </ion-card>
 
+    <!-- error happend -->
+    <div *ngIf="noCon" text-center class="errorMsg">
+        <!-- <ion-card-content> -->
+        <div class="image"></div>
+        <h2>Oops.. Something went wrong.</h2>
+        <p>Please check your internet connection.</p>
+        <b>Pull to refresh</b>
+
+        <!-- </ion-card-content> -->
+    </div>
 </ion-content>

@@ -3,8 +3,9 @@
 
         <ion-title>My Instagram</ion-title>
         <ion-buttons end>
-            <button ion-button icon-only color="royal" (click)="presentModal()">
+            <button ion-button icon-left color="royal" (click)="presentModal()">
               <ion-icon name="information-circle"></ion-icon>
+              info
             </button>
         </ion-buttons>
     </ion-navbar>
@@ -17,6 +18,7 @@
         <ion-refresher-content pullingText="Pull to refresh" pullingIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="Refreshing">
         </ion-refresher-content>
     </ion-refresher>
+
     <ion-card *ngFor="let image of images">
 
         <ion-item>
@@ -26,9 +28,9 @@
             <button ion-button round (click)="launchIG();">{{image.user.full_name}}</button>
             <p class="date"> {{image.created_time * 1000 | date: 'dd/MM/yyyy'}}</p>
         </ion-item>
-        <a href="{{image.link}}">
-            <img src="{{image.images.standard_resolution.url}}">
-        </a>
+        <!-- <a href="{{image.link}}"> -->
+        <img src="{{image.images.standard_resolution.url}}" imageViewer>
+        <!-- </a> -->
         <ion-card-content>
             <p>{{image.caption.text}}</p>
         </ion-card-content>
@@ -48,4 +50,16 @@
 
 
     </ion-card>
+
+
+    <!-- error happend -->
+    <div *ngIf="noCon" text-center class="errorMsg">
+        <!-- <ion-card-content> -->
+        <div class="image"></div>
+        <h2>Oops.. Something went wrong.</h2>
+        <p>Please check your internet connection.</p>
+        <b>Pull to refresh</b>
+
+        <!-- </ion-card-content> -->
+    </div>
 </ion-content>

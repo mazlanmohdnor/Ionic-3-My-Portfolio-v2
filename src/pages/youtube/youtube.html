@@ -3,8 +3,10 @@
     <ion-navbar color="primary">
         <ion-title>My Youtube</ion-title>
         <ion-buttons end>
-            <button ion-button icon-only color="royal" (click)="presentModal()">
-              <ion-icon name="information-circle"></ion-icon>
+            <button ion-button icon-left color="royal" (click)="presentModal()">
+                <ion-icon name="information-circle"></ion-icon>
+              Info
+              
             </button>
         </ion-buttons>
     </ion-navbar>
@@ -22,5 +24,16 @@
         <div class="card-title ">{{video.snippet.title}}</div>
         <div class="card-subtitle ">{{video.snippet.description}}</div>
     </ion-card>
+
+   <!-- error happend -->
+    <div *ngIf="noCon" text-center class="errorMsg">
+        <!-- <ion-card-content> -->
+        <div class="image"></div>
+        <h2>Oops.. Something went wrong.</h2>
+        <p>Please check your internet connection.</p>
+        <b>Pull to refresh</b>
+
+        <!-- </ion-card-content> -->
+    </div>
 
 </ion-content>

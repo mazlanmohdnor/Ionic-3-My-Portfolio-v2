@@ -13,20 +13,22 @@ import { GithubProvider } from './../../providers/github/github';
   templateUrl: 'github.html',
 })
 export class GithubPage {
+  noCon: boolean = false;
+  
   public user = {};
   repos: any;
   repodetail: any;
   public owner = {};
+
   public loader = this.loadingCtrl.create({
     content: "Loading User...",
   });
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, public gitdata: GithubProvider, public http: Http, private toast: ToastController, public loadingCtrl: LoadingController, private iab: InAppBrowser, public modalCtrl: ModalController) {
 
 
     this.loader.present();
     this.doRefresh(0);
-
-
   }
 
   doRefresh(refresher) {
@@ -42,9 +44,14 @@ export class GithubPage {
           showCloseButton: true,
           closeButtonText: 'Ok'
         }).present();
+        this.loader.dismiss();
+        this.noCon = true;
       },
+      //success
       () => {
         this.loader.dismiss();
+        this.noCon = false;
+        
 
       }
     )
