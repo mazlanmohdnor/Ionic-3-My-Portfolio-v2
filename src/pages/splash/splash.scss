@@ -1,0 +1,36 @@
+page-splash {
+    .swiper-pagination-bullet-active {
+        background: #EA6C5C;
+        margin-bottom: 3rem !important;
+    }
+    .first {
+        background-color: #FFFFFF;
+        // color: #fff;
+    }
+    .second {
+        background-color: #EA6C5C;
+        color: #fff;
+        .sky {
+            // -webkit-box-sizing: content-box;
+            // -moz-box-sizing: content-box;
+            // box-sizing: content-box;
+            width: 100%;
+            height: 300px;
+            margin-bottom: 0px;
+            background: #353D44;
+            bottom: 0;
+            position: absolute;
+            z-index: -1;
+        }
+    }
+    .third {
+        // color: #fff;
+        background-color: #fff;
+        .h2-third {
+            padding-bottom: 10rem;
+        }
+        img {
+            padding-bottom: 5rem;
+        }
+    }
+}

@@ -24,7 +24,7 @@ export class YoutubePage {
   });
 
   noCon: boolean = false;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public youtubedata: YoutubeProvider, private youtube: YoutubeVideoPlayer, public loadingCtrl: LoadingController, public modalCtrl: ModalController, private network: Network, private toast: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public youtubedata: YoutubeProvider, private youtube: YoutubeVideoPlayer, public loadingCtrl: LoadingController, public modalCtrl: ModalController, private network:Network, private toast: ToastController) {
 
 
     this.loader.present();
@@ -71,25 +71,25 @@ export class YoutubePage {
     let modal = this.modalCtrl.create(YoutubemodalPage);
     modal.present();
   }
-  // displayNetworkUpdate(connectionState: string) {
+  displayNetworkUpdate(connectionState: string) {
 
-  //   this.toast.create({
-  //     message: `You are now ${connectionState}, pull to refresh.`,
-  //     showCloseButton: true,
-  //     closeButtonText: 'Ok'
-  //   }).present();
-  // }
-  // ionViewDidEnter() {
-  //   this.network.onConnect().subscribe(data => {
-  //     console.log(data)
-  //     this.displayNetworkUpdate(data.type);
-  //   }, error => console.error(error));
+    this.toast.create({
+      message: `You are now ${connectionState}`,
+      showCloseButton: true,
+      closeButtonText: 'Ok'
+    }).present();
+  }
+  ionViewDidEnter() {
+    this.network.onConnect().subscribe(data => {
+      console.log(data)
+      this.displayNetworkUpdate(data.type);
+    }, error => console.error(error));
 
-  //   this.network.onDisconnect().subscribe(data => {
-  //     console.log(data)
-  //     this.displayNetworkUpdate(data.type);
-  //   }, error => console.error(error));
-  // }
+    this.network.onDisconnect().subscribe(data => {
+      console.log(data)
+      this.displayNetworkUpdate(data.type);
+    }, error => console.error(error));
+  }
   // ionViewDidLoad() {
   //   console.log('ionViewDidLoad YoutubePage');
   // }

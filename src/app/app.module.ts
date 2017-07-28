@@ -1,3 +1,4 @@
+import { SplashPage } from './../pages/splash/splash';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -10,9 +11,14 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Network } from '@ionic-native/network';
 import { EmailComposer } from '@ionic-native/email-composer';
+import { IonicStorageModule } from '@ionic/storage';
+
+
+//modal page
 import { IgmodalPage } from './../pages/igmodal/igmodal';
 import { YoutubemodalPage } from './../pages/youtubemodal/youtubemodal';
 import { GithubmodalPage } from './../pages/githubmodal/githubmodal';
+
 
 import { MyApp } from './app.component';
 
@@ -49,6 +55,7 @@ import { IonicImageViewerModule} from 'ionic-img-viewer';
     GithubmodalPage,
     SeminarPage,
     WorkPage,
+    SplashPage,
     ParallaxHeaderDirective,
   ],
   imports: [
@@ -56,7 +63,9 @@ import { IonicImageViewerModule} from 'ionic-img-viewer';
     HttpModule,
     JsonpModule,
     IonicModule.forRoot(MyApp),
-    IonicImageViewerModule
+    IonicImageViewerModule,
+    IonicStorageModule.forRoot(),
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -71,7 +80,8 @@ import { IonicImageViewerModule} from 'ionic-img-viewer';
     IgmodalPage,
     GithubmodalPage,
     SeminarPage,
-    WorkPage
+    WorkPage,
+    SplashPage
 
   ],
   providers: [
@@ -86,6 +96,7 @@ import { IonicImageViewerModule} from 'ionic-img-viewer';
     Network,
     GithubProvider,
     EmailComposer
+    
   ]
 })
 export class AppModule { }

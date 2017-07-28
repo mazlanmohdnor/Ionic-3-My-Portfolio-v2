@@ -1,7 +1,9 @@
+import { SplashPage } from './../splash/splash';
 import { WorkPage } from './../work/work';
 import { SeminarPage } from './../seminar/seminar';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 
 // @IonicPage()
@@ -140,7 +142,7 @@ export class IntroPage {
     }
     ]
   };
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage) {
     // let localData = http.get('assets/resume.json')
     //   .map(res => res.json());
     // // .map(res => res.details);
@@ -152,6 +154,21 @@ export class IntroPage {
     // })
 
   }
+
+  ionViewDidLoad() {
+    this.storage.get('intro-done').then(done => {
+      if (!done) {
+        this.storage.set('intro-done', true);
+        this.navCtrl.setRoot(SplashPage);
+      }
+    });
+  }
+//reset splash je, testing je
+  resetStorage() {
+    this.storage.clear();
+    // this.navCtrl.setRoot(SplashPage)
+  }
+
   //navigate to SeminarPage
   goSeminar(info) {
     this.navCtrl.push(SeminarPage, {
@@ -165,8 +182,6 @@ export class IntroPage {
       'info': this.info
     });
   }
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad IntroPage');
-  }
+
 
 }
