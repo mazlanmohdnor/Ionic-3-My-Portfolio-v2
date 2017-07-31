@@ -13,17 +13,14 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'seminar.html',
 })
 export class SeminarPage {
+ 
   public info: {};
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.info = this.navParams.get('info');
-    // this.navParams.get('info');
+   
   }
 
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SeminarPage');
-    console.log(this.info)
-
-  }
 
 }

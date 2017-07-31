@@ -62,7 +62,7 @@ import { IonicImageViewerModule} from 'ionic-img-viewer';
     BrowserModule,
     HttpModule,
     JsonpModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {tabsHideOnSubPages: true}),
     IonicImageViewerModule,
     IonicStorageModule.forRoot(),
 

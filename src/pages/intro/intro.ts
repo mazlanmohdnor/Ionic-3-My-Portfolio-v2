@@ -1,4 +1,3 @@
-import { SplashPage } from './../splash/splash';
 import { WorkPage } from './../work/work';
 import { SeminarPage } from './../seminar/seminar';
 import { Component } from '@angular/core';
@@ -107,7 +106,7 @@ export class IntroPage {
     },
     {
       "company": "INPENS International College",
-      "job": "Programmer",
+      "job": "Intern Programmer",
       "date": "Jan - Jun 2013",
       "place": "Kuala Selangor",
       "responsibility": ["Maintained college`s website"],
@@ -142,7 +141,7 @@ export class IntroPage {
     }
     ]
   };
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
     // let localData = http.get('assets/resume.json')
     //   .map(res => res.json());
     // // .map(res => res.details);
@@ -152,17 +151,9 @@ export class IntroPage {
 
     //   console.log(this.info);
     // })
-
+    // let status bar overlay webview
   }
 
-  ionViewDidLoad() {
-    this.storage.get('intro-done').then(done => {
-      if (!done) {
-        this.storage.set('intro-done', true);
-        this.navCtrl.setRoot(SplashPage);
-      }
-    });
-  }
 //reset splash je, testing je
   resetStorage() {
     this.storage.clear();

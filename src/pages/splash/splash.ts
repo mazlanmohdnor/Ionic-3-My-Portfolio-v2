@@ -1,4 +1,4 @@
-import { IntroPage } from './../intro/intro';
+import { PagetabsPage } from './../pagetabs/pagetabs';
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
 
@@ -12,7 +12,7 @@ export class SplashPage {
   }
 
   navHome() {
-    this.navCtrl.setRoot(IntroPage);
+    this.navCtrl.setRoot(PagetabsPage);
   }
 
   ionViewWillEnter() {
@@ -32,7 +32,7 @@ export class SplashPage {
     }
   
   }
-  ionViewDidLeave() {
+  ionViewWillLeave() {
     let tabs = document.querySelectorAll('.tabbar');
     if (tabs !== null) {
       Object.keys(tabs).map((key) => {

@@ -19,8 +19,6 @@ export class WorkPage {
     this.info = this.navParams.get('info');
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad WorkPage');
-  }
+
 
 }
