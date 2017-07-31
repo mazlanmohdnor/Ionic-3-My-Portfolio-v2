@@ -6,4 +6,4 @@
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore mazlan.keystore r-u.apk mazlan
 
 
-zipalign -v 4 HelloWorld-release-unsigned.apk HelloWorld.apk
+zipalign -v 4 r-u.apk MyResumev1.6.apk
