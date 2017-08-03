@@ -1,0 +1,6 @@
+admob id for myresume
+
+ca-app-pub-8469816531943468~7646399190
+
+App ID: ca-app-pub-8469816531943468~7646399190
+Ad unit ID: ca-app-pub-8469816531943468/3705609592

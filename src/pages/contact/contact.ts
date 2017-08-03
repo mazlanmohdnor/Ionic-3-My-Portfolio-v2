@@ -10,10 +10,15 @@ import { EmailComposer } from '@ionic-native/email-composer';
 })
 export class ContactPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private emailComposer: EmailComposer,) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, private emailComposer: EmailComposer) {
+    
 
   }
+
+     
+
+
+
 
   sendEmail() {
 

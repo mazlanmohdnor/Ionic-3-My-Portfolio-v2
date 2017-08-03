@@ -1,3 +1,4 @@
+import { AdMobFreeBannerConfig, AdMobFree } from '@ionic-native/admob-free';
 import { WorkPage } from './../work/work';
 import { SeminarPage } from './../seminar/seminar';
 import { Component } from '@angular/core';
@@ -141,7 +142,7 @@ export class IntroPage {
     }
     ]
   };
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public adMobFree:AdMobFree) {
     // let localData = http.get('assets/resume.json')
     //   .map(res => res.json());
     // // .map(res => res.details);
@@ -152,6 +153,27 @@ export class IntroPage {
     //   console.log(this.info);
     // })
     // let status bar overlay webview
+    this.showBannerAd();
+  }
+  //ads
+  async showBannerAd() {
+    try {
+      const bannerConfig: AdMobFreeBannerConfig = {
+        // id: 'ca-app-pub-8469816531943468~7646399190',
+        id:'ca-app-pub-8469816531943468/3705609592',
+        isTesting: false,
+        autoShow: true
+        // size:'320x32'
+      }
+
+      this.adMobFree.banner.config(bannerConfig);
+
+      const result = await this.adMobFree.banner.prepare();
+      console.log(result);
+    }
+    catch (e) {
+      console.error(e);
+    }
   }
 
 //reset splash je, testing je

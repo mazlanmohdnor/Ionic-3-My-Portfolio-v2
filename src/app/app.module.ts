@@ -12,6 +12,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Network } from '@ionic-native/network';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { IonicStorageModule } from '@ionic/storage';
+import { AdMobFree } from '@ionic-native/admob-free';
 
 
 //modal page
@@ -95,8 +96,8 @@ import { IonicImageViewerModule} from 'ionic-img-viewer';
     DataProvider,
     Network,
     GithubProvider,
-    EmailComposer
-    
+    EmailComposer,
+    AdMobFree
   ]
 })
 export class AppModule { }
