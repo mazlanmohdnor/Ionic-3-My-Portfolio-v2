@@ -1,9 +1,9 @@
  keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
 
 
-
+----------------------------------------------
 
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore mazlan.keystore r-u.apk mazlan
 
 
-zipalign -v 4 r-u.apk MyResumev1.6.apk
+zipalign -v 4 r-u.apk MyResumev1.7.apk
