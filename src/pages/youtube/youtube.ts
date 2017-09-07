@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, ModalController, ToastController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ModalController, ToastController, IonicPage } from 'ionic-angular';
 
 //provider
 import { YoutubeProvider } from './../../providers/youtube/youtube';
@@ -9,8 +9,7 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { Network } from '@ionic-native/network';
 
 //youtube modal page
-import { YoutubemodalPage } from './../youtubemodal/youtubemodal';
-// @IonicPage()
+@IonicPage()
 @Component({
   selector: 'page-youtube',
   templateUrl: 'youtube.html',
@@ -25,19 +24,14 @@ export class YoutubePage {
 
   noCon: boolean = false;
   constructor(public navCtrl: NavController, public navParams: NavParams, public youtubedata: YoutubeProvider, private youtube: YoutubeVideoPlayer, public loadingCtrl: LoadingController, public modalCtrl: ModalController, private network:Network, private toast: ToastController) {
-
-
     this.loader.present();
     this.doRefresh(0);
   }
 
   doRefresh(refresher) {
-    // console.log('Begin async operation', refresher);
     this.youtubedata.getVideo().subscribe(
       videos => {
-        // console.log('video', videos);
         this.videos = videos;
-
       },
       //handle error  
       (err) => {
@@ -51,34 +45,31 @@ export class YoutubePage {
       },
       () => {
         this.loader.dismiss();
-
       }
-
     )
     setTimeout(() => {
       if (refresher != 0)
         refresher.complete();
     }, 2000);
-
   }
 
   startVideo(id: string) {
-    console.log(id);
     this.youtube.openVideo(id);
   }
 
   presentModal() {
-    let modal = this.modalCtrl.create(YoutubemodalPage);
+    let modal = this.modalCtrl.create('YoutubemodalPage');
     modal.present();
   }
-  displayNetworkUpdate(connectionState: string) {
 
+  displayNetworkUpdate(connectionState: string) {
     this.toast.create({
       message: `You are now ${connectionState}`,
       showCloseButton: true,
       closeButtonText: 'Ok'
     }).present();
   }
+
   ionViewDidEnter() {
     this.network.onConnect().subscribe(data => {
       console.log(data)
@@ -90,8 +81,4 @@ export class YoutubePage {
       this.displayNetworkUpdate(data.type);
     }, error => console.error(error));
   }
-  // ionViewDidLoad() {
-  //   console.log('ionViewDidLoad YoutubePage');
-  // }
-
 }

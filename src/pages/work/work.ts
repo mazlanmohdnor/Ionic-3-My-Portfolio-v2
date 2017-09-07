@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, IonicPage } from 'ionic-angular';
 
-/**
- * Generated class for the WorkPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-// @IonicPage()
+@IonicPage()
 @Component({
   selector: 'page-work',
   templateUrl: 'work.html',

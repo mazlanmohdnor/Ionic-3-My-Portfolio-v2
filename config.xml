@@ -1,16 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="my.mazlan.myresume" version="1.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="my.mazlan.myresume" version="1.8" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>My Resume</name>
-    <description>This is my first app using ionic 2.</description>
-    <author email="lan.psis@gmail.com" href="http://mazlan.my">My Blog</author>
+    <description>This is my first app using ionic 3.</description>
+    <author email="lan.psis@gmail.com" href="http://mazlan.my">My Portfolio</author>
     <content src="index.html" />
     <access origin="*" />
     <access launch-external="yes" origin="whatsapp:*" />
-    <allow-navigation href="http://ionic.local/*" />
-    <allow-navigation href="http://10.114.26.196:8100" />
-    <allow-navigation href="http://192.168.137.1:8101" />
-    <allow-navigation href="http://10.114.26.196:8101" />
-    <allow-navigation href="http://192.168.43.40:8100" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -24,6 +19,7 @@
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="FadeSplashScreenDuration" value="300" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
@@ -82,20 +78,17 @@
         <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
     </platform>
-    <allow-navigation href="http://192.168.137.1:8100" />
     <engine name="android" spec="^6.2.3" />
-    <plugin name="com.bunkerpalace.cordova.YoutubeVideoPlayer" spec="git+https://github.com/JonSmart/CordovaYoutubeVideoPlayer.git" />
     <plugin name="cordova-plugin-admob-free" spec="^0.10.0" />
     <plugin name="cordova-plugin-console" spec="^1.0.5" />
     <plugin name="cordova-plugin-device" spec="^1.1.4" />
     <plugin name="cordova-plugin-email-composer" spec="^0.8.7" />
     <plugin name="cordova-plugin-inappbrowser" spec="^1.7.1" />
-    <plugin name="cordova-plugin-network-information" spec="~1.3.3" />
+    <plugin name="cordova-plugin-network-information" spec="^1.3.3" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
     <plugin name="cordova-plugin-statusbar" spec="^2.2.2" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.1" />
     <plugin name="cordova-plugin-x-socialsharing" spec="^5.1.8" />
     <plugin name="cordova-plugin-youtube-video-player" spec="^1.0.6" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
-    <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
 </widget>

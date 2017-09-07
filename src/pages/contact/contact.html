@@ -18,30 +18,28 @@
         <!-- <p>Mohd Mazlan</p> -->
         <ion-list no-lines>
             <ion-item>
-
-                <ion-icon item-start name="mail"></ion-icon>
+                <ion-icon name="mail" color="primary" item-start></ion-icon>
                 <p>Email</p>
-
                 lan.psis@gmail.com
-                <button ion-button (click)="sendEmail()" item-end medium color="ionic">Email Me</button>
+                <a button ion-button color="primary" item-end medium (tap)="sendEmail()">Open App</a>
             </ion-item>
             <ion-item>
-                <ion-icon item-start name="call"></ion-icon>
+                <ion-icon item-start name="call" color="danger"></ion-icon>
                 <p>Mobile</p>
                 0196749632
-                <a button ion-button href="tel:0196749632" color="danger" item-end medium>Call me</a>
+                <a button ion-button href="tel:0196749632" color="danger" item-end medium>Poke me</a>
             </ion-item>
             <ion-item>
-                <ion-icon item-start name="logo-whatsapp"></ion-icon>
+                <ion-icon item-start name="logo-whatsapp" color="secondary"></ion-icon>
                 <p>Whatsapp</p>
                 0196749632
-                <a button ion-button color="secondary" item-end medium href="whatsapp://send?text=Hi from ionic&phone=+60196749632&abid=+60196749632">Whatsapp Me</a>
+                <a button ion-button color="secondary" item-end medium href="whatsapp://send?text=Hi from ionic&phone=+60196749632&abid=+60196749632">Open App</a>
             </ion-item>
 
             <ion-item>
-                <ion-icon item-start name="pin"></ion-icon>
+                <ion-icon item-start name="pin" color="twitter"></ion-icon>
                 <!-- <p>Whatsapp</p> -->
-                <p>No 2 Lot 657 Jalan Bukit Rotan Batu 1 45000 Kuala Selangor</p>
+                <p>Jalan Kelisa 9, Taman Kelisa 45800 Jeram Kuala Selangor</p>
                 <!-- <a button ion-button color="secondary" item-end medium href="whatsapp://send?text=Hi from ionic&phone=+60196749632&abid=+60196749632">Whatsapp Me</a> -->
             </ion-item>
 
@@ -51,24 +49,21 @@
 
     </div>
     <div class="sub-content">
-        <h2>Social</h2>
+        <h2>Get in touch</h2>
         <hr>
-        <a href="https://facebook.com/mohdmazlan786" button ion-button color="fb" icon-start>
+        <a href="https://www.linkedin.com/in/mazlanmohdnor/" button ion-button block color="linkedin" icon-start>
+            <ion-icon name='logo-linkedin'></ion-icon>
+            LinkedIn
+        </a>
+        <a href="https://facebook.com/mohdmazlan786" button ion-button block color="fb" icon-start>
             <ion-icon name='logo-facebook'></ion-icon>
             Facebook
         </a>
-        <a href="https://plus.google.com/u/0/+MohdMazlanmohdnor" button ion-button color="gplus" icon-start>
-            <ion-icon name='logo-googleplus'></ion-icon>
-            Google Plus
-        </a>
-        <a href="https://www.youtube.com/c/MohdMazlanmohdnor" button ion-button color="yt" icon-start>
+        <a href="https://www.youtube.com/c/MohdMazlanmohdnor" button ion-button block color="yt" icon-start>
             <ion-icon name='logo-youtube'></ion-icon>
             Youtube
         </a>
-        <a href="https://twitter.com/mazlanmohdnor" button ion-button color="twitter" icon-start>
-            <ion-icon name='logo-twitter'></ion-icon>
-            Twitter
-        </a>
+
 
 
     </div>

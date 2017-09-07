@@ -1,5 +1,8 @@
 {
   "name": "MyResume",
   "app_id": "8bcc962e",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

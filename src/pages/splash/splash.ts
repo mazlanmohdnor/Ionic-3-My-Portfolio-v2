@@ -1,18 +1,17 @@
-import { PagetabsPage } from './../pagetabs/pagetabs';
 import { Component } from '@angular/core';
-import {  NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, IonicPage } from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-splash',
   templateUrl: 'splash.html',
 })
 export class SplashPage {
-
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   navHome() {
-    this.navCtrl.setRoot(PagetabsPage);
+    this.navCtrl.setRoot('PagetabsPage');
   }
 
   ionViewWillEnter() {
@@ -30,8 +29,8 @@ export class SplashPage {
         });
       })
     }
-  
   }
+
   ionViewWillLeave() {
     let tabs = document.querySelectorAll('.tabbar');
     if (tabs !== null) {
@@ -40,8 +39,4 @@ export class SplashPage {
       });
     } // end if
   }
-
-
-  
-
 }

@@ -1,12 +1,10 @@
 import { AdMobFreeBannerConfig, AdMobFree } from '@ionic-native/admob-free';
-import { WorkPage } from './../work/work';
-import { SeminarPage } from './../seminar/seminar';
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, IonicPage } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 
-// @IonicPage()
+@IonicPage()
 @Component({
   selector: 'page-intro',
   templateUrl: 'intro.html',
@@ -56,7 +54,7 @@ export class IntroPage {
       "title": "Mobile App Development Crash Course (Phonegap)",
       "conduct": "Conducted by Alumni of Computer Science UPM",
       "date": "26 November 2016",
-      "img": "assets/phonegap.png"
+      "img": "assets/phonegap.jpg"
     },
     {
       "title": "AWS Internet of Things Course (Hilti IOT Competition Program 2017)",
@@ -159,11 +157,9 @@ export class IntroPage {
   async showBannerAd() {
     try {
       const bannerConfig: AdMobFreeBannerConfig = {
-        // id: 'ca-app-pub-8469816531943468~7646399190',
         id:'ca-app-pub-8469816531943468/3705609592',
         isTesting: false,
         autoShow: true
-        // size:'320x32'
       }
 
       this.adMobFree.banner.config(bannerConfig);
@@ -184,17 +180,15 @@ export class IntroPage {
 
   //navigate to SeminarPage
   goSeminar(info) {
-    this.navCtrl.push(SeminarPage, {
+    this.navCtrl.push('SeminarPage', {
       'info': this.info
     });
   }
 
   //navigate to WorkPage
   goWork(info) {
-    this.navCtrl.push(WorkPage, {
+    this.navCtrl.push('WorkPage', {
       'info': this.info
     });
   }
-
-
 }

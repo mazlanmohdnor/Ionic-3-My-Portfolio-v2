@@ -16,7 +16,7 @@ page-github {
         // padding-bottom: 60px;
     }
     .card-header-2 {
-        background-color: #FE686A;
+        background-color: map-get($colors, primary);
         color: #fff;
         // font-size: 1em;
         // padding: 0px;
@@ -43,10 +43,8 @@ page-github {
         display: none;
     }
     .errorMsg {
-     
         color: #658585;
         margin-top: 100px;
         padding-top: 100px;
-       
     }
 }

@@ -29,13 +29,13 @@
             <p class="date"> {{image.created_time * 1000 | date: 'dd/MM/yyyy'}}</p>
         </ion-item>
         <!-- <a href="{{image.link}}"> -->
-        <img src="{{image.images.standard_resolution.url}}" imageViewer>
+        <img imageViewer src="{{image.images.standard_resolution.url}}">
         <!-- </a> -->
         <ion-card-content>
             <p>{{image.caption.text}}</p>
         </ion-card-content>
-        <hr>
-        <div class="rowcol">
+        <!-- <hr> -->
+        <!-- <div class="rowcol">
             <ion-chip>
                 <ion-icon item-start name="thumbs-up"></ion-icon>
                 <ion-label class="chip-text-work">{{image.likes.count}} Likes</ion-label>
@@ -45,7 +45,7 @@
                 <ion-icon item-start name="text"></ion-icon>
                 <ion-label class="chip-text-work">{{image.comments.count}} Comments</ion-label>
             </ion-chip>
-        </div>
+        </div> -->
 
 
 

@@ -1,17 +1,18 @@
-import { GithubmodalPage } from './../githubmodal/githubmodal';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Http } from '@angular/http';
 import { Component } from '@angular/core';
-import { NavController, NavParams, ToastController, LoadingController, ModalController } from 'ionic-angular';
+import { NavController, NavParams, ToastController, LoadingController, ModalController, IonicPage } from 'ionic-angular';
 
 //gituhb GithubProvider
 import { GithubProvider } from './../../providers/github/github';
 
-// @IonicPage()
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
+@IonicPage()
 @Component({
   selector: 'page-github',
   templateUrl: 'github.html',
-})
+  })
+  
 export class GithubPage {
   noCon: boolean = false;
   
@@ -25,8 +26,6 @@ export class GithubPage {
   });
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public gitdata: GithubProvider, public http: Http, private toast: ToastController, public loadingCtrl: LoadingController, private iab: InAppBrowser, public modalCtrl: ModalController) {
-
-
     this.loader.present();
     this.doRefresh(0);
   }
@@ -34,8 +33,6 @@ export class GithubPage {
   doRefresh(refresher) {
     this.gitdata.getRepo().subscribe(gitdatas => {
       this.repos = gitdatas;
-
-      console.log(this.user);
     },
       //handle error  
       (err) => {
@@ -51,8 +48,6 @@ export class GithubPage {
       () => {
         this.loader.dismiss();
         this.noCon = false;
-        
-
       }
     )
     setTimeout(() => {
@@ -62,22 +57,16 @@ export class GithubPage {
 
     this.gitdata.getUser().subscribe(users => {
       this.user = users;
-
-      // console.log(this.user);
     })
   }
+
   repoDetail(reponame: string) {
     let url = 'https://github.com/mazlanmohdnor/' + reponame;
     return this.iab.create(url);
-
-
   }
-
 
   presentModal() {
-    let modal = this.modalCtrl.create(GithubmodalPage);
+    let modal = this.modalCtrl.create('GithubmodalPage');
     modal.present();
   }
-
-
 }

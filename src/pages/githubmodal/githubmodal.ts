@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, IonicPage } from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-githubmodal',
   templateUrl: 'githubmodal.html',
@@ -13,5 +14,4 @@ export class GithubmodalPage {
   dismiss() {
     this.viewCtrl.dismiss();
   }
-
 }
