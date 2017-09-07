@@ -3,7 +3,7 @@
 
 ----------------------------------------------
 
-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore mazlan.keystore r-u.apk mazlan
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore mazlan.keystore p-u.apk mazlan
 
 
-zipalign -v 4 r-u.apk MyResumev1.7.apk
+zipalign -v 4 p-u.apk MyResumev1.8.apk
