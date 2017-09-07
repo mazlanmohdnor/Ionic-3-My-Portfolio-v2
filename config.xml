@@ -1,9 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<<<<<<< HEAD
 <widget id="my.mazlan.myresume" version="1.8" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-=======
-<widget id="my.mazlan.myresume" version="1.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
->>>>>>> 04b0a75944ec1f37d3c4ea864d8124eca385f4c0
     <name>My Resume</name>
     <description>This is my first app using ionic 3.</description>
     <author email="lan.psis@gmail.com" href="http://mazlan.my">My Portfolio</author>
